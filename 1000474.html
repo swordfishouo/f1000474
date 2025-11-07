@@ -1,6 +1,180 @@
-<html>
-<title>1000474</title>
-<h1>HW05 1000474 林旂宇</h1>
-<h2>test</h2>
-</html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1000474</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --bg2: #0b2545;
+      --card: rgba(255,255,255,0.06);
+      --accent: #7dd3fc;
+      --accent-2: #60a5fa;
+      --glass: rgba(255,255,255,0.05);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Noto Sans TC', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg1),var(--bg2));
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
 
+    .container{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: calc(var(--radius) + 6px);
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px) saturate(1.05);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color:#072137;font-size:20px;
+      box-shadow: 0 6px 18px rgba(6,21,40,0.5);
+    }
+    h1{margin:0;font-weight:700;font-size:20px;letter-spacing:0.6px}
+    p.lead{margin:0;color:rgba(230,238,248,0.75)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+    }
+
+    /* left: main content */
+    .main{
+      padding:20px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+      min-height:320px;
+    }
+
+    .student-card{
+      display:flex;align-items:center;gap:18px;padding:18px;border-radius:12px;background:var(--card);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+    }
+    .avatar{
+      width:92px;height:92px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+      display:flex;align-items:center;justify-content:center;font-weight:900;color:#052035;font-size:20px
+    }
+    .info h2{margin:0;font-size:18px}
+    .id{margin-top:8px;font-weight:700;font-size:28px;letter-spacing:2px}
+    .meta{margin-top:6px;color:rgba(230,238,248,0.65);font-size:14px}
+
+    .about{margin-top:18px;color:rgba(230,238,248,0.8);line-height:1.6}
+
+    /* right: HW area */
+    .sidebar{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+      height:100%;
+    }
+    .hw-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .hw-title h3{margin:0}
+    .hw-list{display:grid;gap:10px}
+    .hw-item{
+      display:block;padding:10px 12px;border-radius:10px;background:var(--glass);text-decoration:none;color:inherit;
+      border:1px solid rgba(255,255,255,0.025);font-weight:600;
+    }
+    .hw-item:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(5,15,30,0.35)}
+
+    footer{margin-top:18px;padding-top:12px;border-top:1px dotted rgba(255,255,255,0.03);font-size:13px;color:rgba(230,238,248,0.6)}
+
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .sidebar{order:2;margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">ID</div>
+        <div>
+          <h1>學生資訊頁面</h1>
+          <p class="lead">學號重點展示 — 以簡潔、現代的風格呈現</p>
+        </div>
+      </div>
+      <div aria-hidden="true" style="text-align:right;color:rgba(230,238,248,0.55);font-size:13px">
+        建立日期：2025/11/07
+      </div>
+    </header>
+
+    <section class="grid">
+      <main class="main">
+        <div class="student-card" aria-labelledby="student-id">
+          <div class="avatar">1000</div>
+          <div class="info">
+            <h2 id="student-id">學生 — 學號資訊</h2>
+            <div class="id">1000474</div>
+            <div class="meta">系級：資訊工程 / 年級：大學三年級（範例）</div>
+          </div>
+        </div>
+
+        <div class="about">
+          <h3 style="margin-top:0">簡介</h3>
+          <p>這個頁面以顯示你的<strong>學號 1000474</strong>為主要目的，並預留一個「HW08」作業連結區，方便日後加入作業檔案或報告連結。設計採用現代 UI 元素、玻璃質感與漸層配色，並保留可擴展性（可加入更多學習資料、作品集或聯絡方式）。</p>
+        </div>
+
+        <footer>
+          小提示：可將此 HTML 檔案另存為 <code>index.html</code> 並在瀏覽器中開啟來預覽完整效果。
+        </footer>
+      </main>
+
+      <aside class="sidebar" aria-labelledby="hw08-heading">
+        <div class="hw-title">
+          <h3 id="hw08-heading">HW08</h3>
+          <small style="color:rgba(230,238,248,0.6)">作業連結區</small>
+        </div>
+
+        <nav class="hw-list" aria-label="HW08 links">
+          <!-- 下面為預留的作業連結樣板，往後可以把 href 換成實際檔案或外部連結 -->
+          <a class="hw-item" href="#" title="作業1（範例）">HW08-1：需求說明（placeholder）</a>
+          <a class="hw-item" href="#" title="作業2（範例）">HW08-2：程式碼上傳（placeholder）</a>
+          <a class="hw-item" href="#" title="作業3（範例）">HW08-3：報告 PDF（placeholder）</a>
+          <a class="hw-item" href="#" title="新增作業">+ 新增作業連結</a>
+        </nav>
+
+        <div style="margin-top:14px;font-size:13px;color:rgba(230,238,248,0.6)">
+          使用說明：將來把作業檔案放到雲端（如 Google Drive）後，可把分享連結貼到上方以便同學或老師存取。
+        </div>
+
+      </aside>
+    </section>
+  </div>
+</body>
+</html>
